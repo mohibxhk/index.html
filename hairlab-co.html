@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.className='js';</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hair Lab Co — Premium Barber Shop in Manama, Bahrain</title>
+<meta name="description" content="Hair Lab Co is a premium barber shop in Manama, Bahrain. Precision haircuts, skin fades, beard grooming, colour and keratin by expert barbers. Book your appointment today." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --bg:#ffffff;--cream:#f7f4ee;--cream-2:#efe9df;
+  --ink:#181510;--ink-2:#4c463d;--muted:#8b857a;
+  --line:#e8e2d7;--line-2:#ded7ca;
+  --accent:#9a6a3c;--accent-d:#7c5329;--accent-soft:#f0e6d8;
+  --dark:#181510;
+  --font-serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-sans:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);--maxw:1200px;--radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--accent);color:#fff}
+h1,h2,h3{font-family:var(--font-serif);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+section[id],header[id]{scroll-margin-top:86px}
+
+/* inline icon sizing */
+[data-i]{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;width:1.15em;height:1.15em;flex:0 0 auto}
+[data-i] svg{width:100%;height:100%;display:block}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--accent)}
+.section-head{max-width:620px;margin-bottom:52px}
+.section-head.center{margin-inline:auto;text-align:center}
+.section-head.center .eyebrow{justify-content:center}
+.section-head.center .eyebrow::before{display:none}
+.section-head h2{font-size:clamp(2rem,4.4vw,3.2rem);margin:14px 0 14px}
+.section-head p{color:var(--ink-2);font-size:1.05rem}
+
+.js [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+[data-reveal].in{opacity:1;transform:none}
+
+.btn{position:relative;display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:8px;font-weight:600;font-size:.94rem;
+  font-family:var(--font-sans);border:1px solid transparent;cursor:pointer;transition:transform .25s var(--ease),background .25s,border-color .25s,color .25s;white-space:nowrap;line-height:1}
+.btn [data-i]{width:18px;height:18px}
+.btn:active{transform:translateY(1px)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--accent-d)}
+.btn-outline{border-color:var(--line-2);color:var(--ink);background:#fff}
+.btn-outline:hover{border-color:var(--ink);background:var(--cream)}
+.scrollbar{position:fixed;top:0;left:0;height:2px;width:100%;z-index:9998;transform:scaleX(0);transform-origin:0;background:var(--accent)}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .35s,box-shadow .35s,padding .35s}
+.nav.scrolled{border-color:var(--line);box-shadow:0 6px 24px -18px rgba(0,0,0,.4)}
+.nav-in{max-width:1280px;margin:0 auto;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:24px;transition:padding .35s}
+.nav.scrolled .nav-in{padding:12px 26px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--font-serif);font-weight:600;font-size:1.2rem}
+.brand .mark{width:38px;height:38px;border-radius:9px;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:1rem;flex:0 0 auto}
+.brand .sub{display:block;font-family:var(--font-sans);font-size:.58rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:-3px}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{position:relative;padding:9px 14px;font-size:.93rem;font-weight:500;color:var(--ink-2);transition:color .25s}
+.nav-links a::after{content:"";position:absolute;left:14px;right:14px;bottom:5px;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:0;transition:transform .3s var(--ease)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-phone{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.9rem;color:var(--ink)}
+.nav-phone [data-i]{width:16px;height:16px;color:var(--accent)}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line-2);border-radius:8px;background:#fff;color:var(--ink);place-items:center;cursor:pointer}
+@media(max-width:960px){.nav-links,.nav-phone{display:none}.burger{display:grid}}
+
+/* HERO */
+.hero{padding:150px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:38px}.hero{padding:120px 0 60px}}
+.hero h1{font-size:clamp(2.8rem,6.4vw,4.8rem);letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .lead{margin:24px 0 32px;color:var(--ink-2);font-size:1.15rem;max-width:46ch}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-trust{display:flex;align-items:center;gap:24px;margin-top:38px;flex-wrap:wrap}
+.hero-trust .stars{color:var(--accent);letter-spacing:1px}
+.hero-trust b{font-family:var(--font-serif);font-size:1.2rem;font-weight:600}
+.hero-trust span{color:var(--muted);font-size:.85rem}
+.hero-trust .sep{width:1px;height:28px;background:var(--line-2)}
+.hero-visual{position:relative}
+.hero-visual .main{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--cream-2);box-shadow:0 40px 80px -40px rgba(24,21,16,.4)}
+.hero-visual .main img{width:100%;height:100%;object-fit:cover}
+.hero-visual .float{position:absolute;left:-22px;bottom:34px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;box-shadow:0 20px 40px -20px rgba(24,21,16,.35);display:flex;align-items:center;gap:14px}
+.hero-visual .float .ic{width:42px;height:42px;border-radius:10px;background:var(--accent-soft);color:var(--accent-d);display:grid;place-items:center;flex:0 0 auto}
+.hero-visual .float .ic [data-i]{width:22px;height:22px}
+.hero-visual .float b{font-family:var(--font-serif);font-size:1.3rem;display:block;line-height:1}
+.hero-visual .float span{font-size:.78rem;color:var(--muted)}
+@media(max-width:520px){.hero-visual .float{left:14px}}
+
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--cream)}
+.strip-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:22px;padding:24px 0}
+.strip .s{display:flex;align-items:center;gap:11px;color:var(--ink-2);font-weight:500;font-size:.95rem}
+.strip .s [data-i]{width:20px;height:20px;color:var(--accent)}
+
+.band{padding:100px 0}
+.band.cream{background:var(--cream)}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:1000px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.svc-grid{grid-template-columns:1fr}}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 28px 54px -30px rgba(24,21,16,.4);border-color:var(--line-2)}
+.svc .ph{aspect-ratio:5/4;overflow:hidden;background:var(--cream-2)}
+.svc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.svc:hover .ph img{transform:scale(1.07)}
+.svc .b{padding:20px}
+.svc .b .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.svc .b h3{font-size:1.2rem}
+.svc .b .price{font-family:var(--font-serif);font-weight:600;color:var(--accent-d);white-space:nowrap}
+.svc .b p{color:var(--ink-2);font-size:.9rem;margin-top:6px}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:860px){.about{grid-template-columns:1fr;gap:38px}}
+.about-photos .p1{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--cream-2);box-shadow:0 30px 60px -36px rgba(24,21,16,.4)}
+.about-photos .p1 img{width:100%;height:100%;object-fit:cover}
+.about h2{font-size:clamp(1.9rem,3.8vw,2.9rem);margin:14px 0 18px}
+.about > div > p{color:var(--ink-2);margin-bottom:14px}
+.checks{margin:26px 0 30px;display:grid;gap:15px}
+.checks .c{display:flex;gap:12px;align-items:flex-start}
+.checks .c .tick{width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent-d);display:grid;place-items:center;flex:0 0 auto}
+.checks .c .tick [data-i]{width:15px;height:15px}
+.checks .c b{font-weight:600}
+.checks .c span{color:var(--ink-2);font-size:.92rem}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media(max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.team-grid{grid-template-columns:1fr}}
+.tm .ph{border-radius:var(--radius);overflow:hidden;aspect-ratio:1/1;position:relative;background:var(--cream-2)}
+.tm .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.tm:hover .ph img{transform:scale(1.06)}
+.tm .ph .soc{position:absolute;left:12px;bottom:12px;display:flex;gap:7px;opacity:0;transform:translateY(8px);transition:.4s var(--ease)}
+.tm:hover .ph .soc{opacity:1;transform:none}
+.tm .ph .soc a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.92);color:var(--ink);display:grid;place-items:center;transition:.25s}
+.tm .ph .soc a:hover{background:var(--accent);color:#fff}
+.tm .ph .soc [data-i]{width:16px;height:16px}
+.tm .info{padding:16px 2px 0}
+.tm .info h3{font-size:1.16rem}
+.tm .info .role{color:var(--accent-d);font-size:.85rem;font-weight:600;margin-top:2px}
+.tm .info .spec{color:var(--muted);font-size:.82rem;margin-top:4px}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr);gap:34px}}
+.stat .num{font-family:var(--font-serif);font-weight:600;font-size:clamp(2.3rem,4.6vw,3.4rem);color:var(--ink);line-height:1}
+.stat .num .u{color:var(--accent)}
+.stat .lbl{margin-top:8px;color:var(--ink-2);font-size:.92rem}
+
+/* REVIEWS */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:860px){.rev-grid{grid-template-columns:1fr}}
+.rev{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.rev .stars{color:var(--accent);letter-spacing:1px;margin-bottom:14px;font-size:1.05rem}
+.rev p{font-size:1rem;color:var(--ink);line-height:1.65}
+.rev .who{display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.rev .av{width:44px;height:44px;border-radius:50%;background:var(--accent-soft);color:var(--accent-d);display:grid;place-items:center;font-weight:700;font-family:var(--font-serif);flex:0 0 auto}
+.rev .who b{font-weight:600;font-size:.95rem}
+.rev .who span{display:block;color:var(--muted);font-size:.8rem}
+
+/* GALLERY */
+.filters{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-bottom:34px}
+.filt{padding:9px 18px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-2);background:#fff;border:1px solid var(--line-2);cursor:pointer;transition:.25s}
+.filt.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.filt:hover:not(.active){border-color:var(--ink)}
+.masonry{columns:3;column-gap:18px}
+@media(max-width:800px){.masonry{columns:2}}
+@media(max-width:480px){.masonry{columns:1}}
+.gitem{break-inside:avoid;margin-bottom:18px;border-radius:var(--radius);overflow:hidden;position:relative;cursor:pointer;border:1px solid var(--line);background:var(--cream-2)}
+.gitem.hide{display:none}
+.gitem img{width:100%;transition:transform .6s var(--ease)}
+.gitem:hover img{transform:scale(1.05)}
+.gitem .cap{position:absolute;left:0;right:0;bottom:0;padding:16px;background:linear-gradient(0deg,rgba(24,21,16,.82),transparent);color:#fff;display:flex;justify-content:space-between;align-items:flex-end;opacity:0;transition:.35s var(--ease)}
+.gitem:hover .cap{opacity:1}
+.gitem .cap b{font-family:var(--font-serif);font-weight:500}
+.gitem .cap span{display:block;font-size:.7rem;color:#e7c9a0;text-transform:uppercase;letter-spacing:.1em;opacity:.9}
+.gitem .cap .ex{width:32px;height:32px;border-radius:7px;background:rgba(255,255,255,.22);display:grid;place-items:center;flex:0 0 auto}
+.gitem .cap .ex [data-i]{width:15px;height:15px}
+.lightbox{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:26px;background:rgba(24,21,16,.85);backdrop-filter:blur(8px)}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(840px,92vw);max-height:82vh;border-radius:12px}
+.lightbox .close{position:absolute;top:24px;right:24px;width:46px;height:46px;border-radius:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;display:grid;place-items:center;cursor:pointer}
+
+/* CTA */
+.cta{position:relative;border-radius:20px;overflow:hidden;isolation:isolate;background:var(--dark)}
+.cta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.5}
+.cta .veil{position:absolute;inset:0;z-index:1;background:linear-gradient(120deg,rgba(24,21,16,.9),rgba(24,21,16,.55))}
+.cta-in{position:relative;z-index:2;padding:82px 40px;text-align:center;color:#fff;max-width:680px;margin:0 auto}
+.cta-in .eyebrow{color:#e7c9a0}
+.cta-in .eyebrow::before{background:#e7c9a0}
+.cta-in h2{font-size:clamp(2.1rem,5vw,3.6rem);margin:14px 0 16px;color:#fff}
+.cta-in p{color:rgba(255,255,255,.82);margin:0 auto 30px;max-width:44ch}
+.cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-wa{background:#25d366;color:#0a2e17}.btn-wa:hover{background:#2ee574}
+.btn-light{background:#fff;color:var(--ink)}.btn-light:hover{background:var(--cream)}
+.btn-ghost-l{border:1px solid rgba(255,255,255,.35);color:#fff;background:transparent}.btn-ghost-l:hover{background:rgba(255,255,255,.12)}
+
+/* FOOTER */
+.foot{background:var(--dark);color:#cfc8ba;padding:76px 0 34px}
+.foot .brand{color:#fff}
+.foot .brand .mark{background:#fff;color:var(--ink)}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:44px}
+@media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.foot-grid{grid-template-columns:1fr}}
+.foot h4{font-family:var(--font-serif);color:#fff;font-size:1.05rem;margin-bottom:18px;font-weight:600}
+.foot .col a,.foot .col p{display:block;color:#b3ab9c;font-size:.92rem;margin-bottom:10px;transition:color .25s}
+.foot .col a:hover{color:#fff}
+.foot .hours span{display:flex;justify-content:space-between;gap:12px;color:#b3ab9c;font-size:.9rem;margin-bottom:9px}
+.foot .hours b{color:#fff}
+.news{display:flex;gap:8px;margin-top:8px}
+.news input{flex:1;min-width:0;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:8px;padding:12px 13px;color:#fff;font-family:inherit;font-size:.9rem}
+.news input::placeholder{color:#8f887b}
+.news input:focus{outline:none;border-color:var(--accent)}
+.news button{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:0 16px;font-weight:600;cursor:pointer}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-top:54px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);color:#8f887b;font-size:.84rem}
+.foot-social{display:flex;gap:9px}
+.foot-social a{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.16);color:#cfc8ba;transition:.25s}
+.foot-social a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.foot-social [data-i]{width:18px;height:18px}
+
+.mmenu{position:fixed;inset:0;z-index:200;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.mmenu.open{display:flex}
+.mmenu a{font-family:var(--font-serif);font-size:2rem;color:var(--ink-2);padding:8px}
+.mmenu a:hover{color:var(--accent)}
+.mmenu .book{margin-top:20px}
+.mmenu .close{position:absolute;top:22px;right:22px;width:46px;height:46px;border-radius:8px;border:1px solid var(--line-2);background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer}
+#toast{position:fixed;bottom:26px;left:50%;transform:translate(-50%,20px);z-index:2000;opacity:0;pointer-events:none;background:var(--ink);color:#fff;padding:13px 20px;border-radius:8px;font-weight:500;font-size:.9rem;transition:.4s var(--ease)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}html{scroll-behavior:auto}.js [data-reveal]{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="scrollbar" id="scrollbar"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#top" class="brand"><span class="mark">H</span><span>Hair Lab Co<span class="sub">Manama · Bahrain</span></span></a>
+    <div class="nav-links">
+      <a href="#top">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#team">Barbers</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:+97300000000"><span data-i="phone"></span>+973 0000 0000</a>
+      <button class="btn btn-dark" onclick="go('#contact')"><span data-i="calendar"></span>Book Now</button>
+      <button class="burger" id="burger" aria-label="Open menu"><span data-i="menu"></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mmenu" id="mmenu">
+  <button class="close" id="mclose" aria-label="Close menu"><span data-i="x"></span></button>
+  <a href="#top" data-mclose>Home</a><a href="#services" data-mclose>Services</a><a href="#about" data-mclose>About</a><a href="#team" data-mclose>Barbers</a><a href="#gallery" data-mclose>Gallery</a><a href="#reviews" data-mclose>Reviews</a>
+  <button class="btn btn-dark book" onclick="go('#contact')"><span data-i="calendar"></span>Book Now</button>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div data-reveal>
+      <div class="eyebrow">Premium barber shop · Manama</div>
+      <h1>Your best <em>haircut</em> in Bahrain.</h1>
+      <p class="lead">Precision cuts, clean fades and sharp beard work from expert barbers — in a calm, modern space built around the details.</p>
+      <div class="hero-actions">
+        <button class="btn btn-dark" onclick="go('#contact')"><span data-i="calendar"></span>Book Appointment</button>
+        <button class="btn btn-outline" onclick="go('#services')">View Services & Prices</button>
+      </div>
+      <div class="hero-trust">
+        <div><span class="stars">★★★★★</span> <b>4.9</b> <span>on Google</span></div>
+        <div class="sep"></div>
+        <div><b>544+</b> <span>reviews</span></div>
+        <div class="sep"></div>
+        <div><b>10,000+</b> <span>cuts crafted</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" data-reveal>
+      <div class="main"><img id="heroImg" alt="Barber at work at Hair Lab Co, Manama" /></div>
+      <div class="float">
+        <div class="ic"><span data-i="scissors"></span></div>
+        <div><b>12 yrs</b><span>master craft</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap strip-in">
+    <div class="s"><span data-i="calendar"></span> Open 7 days a week</div>
+    <div class="s"><span data-i="user"></span> Walk-ins welcome</div>
+    <div class="s"><span data-i="sparkles"></span> Hot-towel finish included</div>
+    <div class="s"><span data-i="pin"></span> Al Seef, Manama</div>
+  </div>
+</div>
+
+<section class="band" id="services">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">Services & pricing</div>
+      <h2>Everything you'd want from a barber.</h2>
+      <p>Every appointment starts with a consultation and ends with a hot-towel finish.</p>
+    </div>
+    <div class="svc-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<section class="band cream" id="about">
+  <div class="wrap about">
+    <div class="about-photos" data-reveal>
+      <div class="p1"><img id="aboutImg" alt="Inside Hair Lab Co" /></div>
+    </div>
+    <div data-reveal>
+      <div class="eyebrow">Why Hair Lab Co</div>
+      <h2>A barbershop that respects your time and your look.</h2>
+      <p>We're not a conveyor belt. Every guest gets a proper consultation, an unhurried cut, and a finish that holds until your next visit.</p>
+      <div class="checks">
+        <div class="c"><span class="tick"><span data-i="check"></span></span><div><b>Expert barbers</b> — <span>trained on your face shape, not a template.</span></div></div>
+        <div class="c"><span class="tick"><span data-i="check"></span></span><div><b>Spotless hygiene</b> — <span>fresh blades and sterilised tools, every single time.</span></div></div>
+        <div class="c"><span class="tick"><span data-i="check"></span></span><div><b>Premium products</b> — <span>clean, matte-finish grooming lines that last.</span></div></div>
+      </div>
+      <button class="btn btn-dark" onclick="go('#contact')"><span data-i="calendar"></span>Book your chair</button>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="team">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow">The barbers</div>
+      <h2>Meet the team.</h2>
+      <p>Book by name — each barber has a signature they're known for.</p>
+    </div>
+    <div class="team-grid" id="teamGrid"></div>
+  </div>
+</section>
+
+<section class="band cream">
+  <div class="wrap">
+    <div class="stats" data-reveal>
+      <div class="stat"><div class="num" data-count="544"><span class="v">0</span><span class="u">+</span></div><div class="lbl">Google Reviews</div></div>
+      <div class="stat"><div class="num" data-count="4.9" data-dec="1"><span class="v">0</span></div><div class="lbl">Average Rating</div></div>
+      <div class="stat"><div class="num" data-count="10000"><span class="v">0</span><span class="u">+</span></div><div class="lbl">Haircuts Completed</div></div>
+      <div class="stat"><div class="num" data-count="12"><span class="v">0</span><span class="u"> yrs</span></div><div class="lbl">Behind the Chair</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="reviews">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <div class="eyebrow">Reviews</div>
+      <h2>What our clients say.</h2>
+      <p>A few words straight from the chair.</p>
+    </div>
+    <div class="rev-grid" id="revGrid"></div>
+  </div>
+</section>
+
+<section class="band cream" id="gallery">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <div class="eyebrow">Our work</div>
+      <h2>Recent from the chair.</h2>
+      <p>Filter by what you're after — tap any photo to enlarge.</p>
+    </div>
+    <div class="filters" id="filters" data-reveal>
+      <button class="filt active" data-filter="all">All</button>
+      <button class="filt" data-filter="haircuts">Haircuts</button>
+      <button class="filt" data-filter="beard">Beard</button>
+      <button class="filt" data-filter="styling">Styling</button>
+      <button class="filt" data-filter="detail">Detail</button>
+    </div>
+    <div class="masonry" id="masonry"></div>
+  </div>
+</section>
+
+<section class="band" id="contact">
+  <div class="wrap">
+    <div class="cta" data-reveal>
+      <img id="ctaImg" alt="" />
+      <div class="veil"></div>
+      <div class="cta-in">
+        <div class="eyebrow">Your chair is waiting</div>
+        <h2>Ready for your best look?</h2>
+        <p>Pick a barber and a time. Book online, message us, or just call.</p>
+        <div class="cta-actions">
+          <button class="btn btn-light" onclick="toast('Connect this to your booking system')"><span data-i="calendar"></span>Book Appointment</button>
+          <a class="btn btn-wa" href="https://wa.me/97300000000" target="_blank" rel="noopener"><span data-i="chat"></span>WhatsApp</a>
+          <a class="btn btn-ghost-l" href="tel:+97300000000"><span data-i="phone"></span>Call Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="col">
+        <a href="#top" class="brand" style="margin-bottom:16px"><span class="mark">H</span><span>Hair Lab Co<span class="sub">Manama · Bahrain</span></span></a>
+        <p>A premium barber shop for the modern gentleman. Precision cuts, beard grooming and styling in the heart of Manama.</p>
+        <p style="color:#fff"><span data-i="pin" style="color:var(--accent)"></span> Road 2825, Block 428, Al Seef, Manama</p>
+      </div>
+      <div class="col">
+        <h4>Explore</h4>
+        <a href="#services">Services</a><a href="#about">About</a><a href="#team">Barbers</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a>
+      </div>
+      <div class="col hours">
+        <h4>Opening Hours</h4>
+        <span>Sat – Thu <b>10:00 – 22:00</b></span>
+        <span>Friday <b>14:00 – 22:00</b></span>
+        <span>Walk-ins <b>Welcome</b></span>
+      </div>
+      <div class="col">
+        <h4>Newsletter</h4>
+        <p>Grooming tips and offers, occasionally.</p>
+        <div class="news"><input type="email" placeholder="you@email.com" aria-label="Email"/><button onclick="toast('Subscribed ✂️')">Join</button></div>
+        <div class="foot-social" style="margin-top:18px">
+          <a href="#" aria-label="Instagram"><span data-i="instagram"></span></a>
+          <a href="#" aria-label="Facebook"><span data-i="facebook"></span></a>
+          <a href="https://wa.me/97300000000" aria-label="WhatsApp"><span data-i="chat"></span></a>
+          <a href="tel:+97300000000" aria-label="Call"><span data-i="phone"></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Hair Lab Co. All rights reserved.</span>
+      <a href="https://maps.google.com/?q=Al+Seef+Manama+Bahrain" target="_blank" rel="noopener" style="display:inline-flex;gap:6px;align-items:center;color:#cfc8ba"><span data-i="nav" style="width:14px;height:14px"></span> Get directions</a>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox"><button class="close" id="lbClose"><span data-i="x"></span></button><img id="lbImg" alt="" /></div>
+<div id="toast"></div>
+
+<script>
+(function(){
+"use strict";
+var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
+var U = function(id,w){return 'https://images.unsplash.com/photo-'+id+'?auto=format&fit=crop&w='+(w||800)+'&q=80';};
+
+/* Licensed Unsplash placeholders (free for commercial use, no attribution).
+   Replace these IDs with Hair Lab Co's own photos before launch. */
+var IMG = {
+  chair:'1503951914875-452162b0f3f1', gettingCut:'1686671805337-7d8aa64b965f',
+  fade:'1770253980732-dfed1cfdfa43', scissors:'1647140655214-e4a2d914971f',
+  cutting:'1593702275687-f8b402bf1fb5', portrait:'1599351431202-1e0f0137899a',
+  tools:'1621605815971-fbc98d665033', styling:'1634449571010-02389ed0f9b0'
+};
+
+/* ---- inline SVG icons (no external library) ---- */
+var P = {
+  phone:'<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9z"/>',
+  calendar:'<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/>',
+  menu:'<path d="M4 6h16M4 12h16M4 18h16"/>',
+  x:'<path d="M18 6 6 18M6 6l12 12"/>',
+  scissors:'<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/>',
+  user:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/>',
+  sparkles:'<path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/>',
+  pin:'<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>',
+  check:'<path d="M20 6 9 17l-5-5"/>',
+  instagram:'<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>',
+  facebook:'<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+  chat:'<path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8A8.5 8.5 0 0 1 12.5 20a8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 4 11.5a8.5 8.5 0 0 1 4.7-7.6A8.4 8.4 0 0 1 12.5 3h.5a8.5 8.5 0 0 1 8 8z"/>',
+  maximize:'<path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>',
+  nav:'<path d="M3 11l19-9-9 19-2-8-8-2z"/>'
+};
+function svg(name){var d=P[name]; if(!d) return '';
+  return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+d+'</svg>';}
+function paintIcons(){ try{
+  var els=document.querySelectorAll('[data-i]');
+  for(var i=0;i<els.length;i++){ els[i].innerHTML = svg(els[i].getAttribute('data-i')); }
+}catch(e){} }
+
+/* ---- render sections ---- */
+try{
+  document.getElementById('heroImg').src  = U(IMG.gettingCut,1100);
+  document.getElementById('aboutImg').src = U(IMG.chair,1000);
+  document.getElementById('ctaImg').src   = U(IMG.cutting,1600);
+}catch(e){}
+
+var services = [
+  {n:'Signature Haircut', d:'Scissor & clipper cut, styled', p:'12 BHD', img:IMG.scissors},
+  {n:'Skin Fade', d:'Zero-to-blend, sharp lines', p:'14 BHD', img:IMG.fade},
+  {n:'Beard Grooming', d:'Shape, line-up, hot towel', p:'8 BHD', img:IMG.portrait},
+  {n:"Gentleman's Cut", d:'Classic scissor styling', p:'13 BHD', img:IMG.cutting},
+  {n:'Kids Haircut', d:'Patient, quick & tidy', p:'9 BHD', img:IMG.gettingCut},
+  {n:'Hair Colouring', d:'Grey blend to full colour', p:'20 BHD', img:IMG.styling},
+  {n:'Keratin Treatment', d:'Smoothing & frizz control', p:'30 BHD', img:IMG.chair},
+  {n:'The Full Service', d:'Cut + beard + finish', p:'32 BHD', img:IMG.tools}
+];
+var team = [
+  {n:'Yousif Al Khalifa', r:'Master Barber', s:'Skin fades · line-ups', img:IMG.fade},
+  {n:'Mahmood Sayed', r:'Senior Barber', s:'Scissor work · classic', img:IMG.cutting},
+  {n:'Ali Rahman', r:'Beard Specialist', s:'Beard sculpt · hot towel', img:IMG.portrait},
+  {n:'Karim Nasser', r:'Colour & Keratin', s:'Colour · smoothing', img:IMG.styling}
+];
+var reviews = [
+  {t:'Best fade I have had in Bahrain, full stop. Yousif takes his time and it shows.', n:'Hamad A.', s:'Google review', av:'H'},
+  {t:'Walked in stressed, walked out feeling brand new. The hot-towel finish is unreal.', n:'Omar K.', s:'Google review', av:'O'},
+  {t:'Clean shop, sharp team, always on time. This is how a barber should be run.', n:'Faisal H.', s:'Google review', av:'F'}
+];
+var gallery = [
+  {t:'Mid Skin Fade', c:'haircuts', img:IMG.fade},{t:'Scissor Cut', c:'haircuts', img:IMG.scissors},
+  {t:'Fresh Line-up', c:'haircuts', img:IMG.gettingCut},{t:'Beard Sculpt', c:'beard', img:IMG.portrait},
+  {t:'Styling & Finish', c:'styling', img:IMG.styling},{t:'Classic Cut', c:'styling', img:IMG.cutting},
+  {t:'The Chair', c:'detail', img:IMG.chair},{t:'Tools of the Trade', c:'detail', img:IMG.tools}
+];
+
+try{
+  document.getElementById('svcGrid').innerHTML = services.map(function(s){return ''+
+    '<article class="svc" data-reveal><div class="ph"><img src="'+U(s.img,600)+'" alt="'+s.n+'" loading="lazy"/></div>'+
+    '<div class="b"><div class="top"><h3>'+s.n+'</h3><span class="price">'+s.p+'</span></div><p>'+s.d+'</p></div></article>';}).join('');
+
+  document.getElementById('teamGrid').innerHTML = team.map(function(t){return ''+
+    '<article class="tm" data-reveal><div class="ph"><img src="'+U(t.img,500)+'" alt="'+t.n+'" loading="lazy"/>'+
+    '<div class="soc"><a href="#" aria-label="Instagram"><span data-i="instagram"></span></a>'+
+    '<a href="https://wa.me/97300000000" aria-label="WhatsApp"><span data-i="chat"></span></a></div></div>'+
+    '<div class="info"><h3>'+t.n+'</h3><div class="role">'+t.r+'</div><div class="spec">'+t.s+'</div></div></article>';}).join('');
+
+  document.getElementById('revGrid').innerHTML = reviews.map(function(r){return ''+
+    '<div class="rev" data-reveal><div class="stars">★★★★★</div><p>“'+r.t+'”</p>'+
+    '<div class="who"><div class="av">'+r.av+'</div><div><b>'+r.n+'</b><span>'+r.s+'</span></div></div></div>';}).join('');
+
+  document.getElementById('masonry').innerHTML = gallery.map(function(g,i){return ''+
+    '<div class="gitem" data-cat="'+g.c+'" data-img="'+g.img+'" data-title="'+g.t+'">'+
+    '<img src="'+U(g.img,700)+'" alt="'+g.t+'" loading="lazy"/>'+
+    '<div class="cap"><div><b>'+g.t+'</b><span>'+g.c+'</span></div><div class="ex"><span data-i="maximize"></span></div></div></div>';}).join('');
+}catch(e){}
+
+paintIcons();
+
+/* image error → fade out broken icon, keep panel bg */
+try{ var imgs=document.querySelectorAll('img'); for(var k=0;k<imgs.length;k++){ imgs[k].addEventListener('error',function(){this.style.visibility='hidden';}); } }catch(e){}
+
+/* ---- reveals (IntersectionObserver, with fallbacks) ---- */
+function revealAll(){var e=document.querySelectorAll('[data-reveal]');for(var i=0;i<e.length;i++)e[i].classList.add('in');}
+try{
+  if(reduce){ revealAll(); }
+  else if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(ents){ents.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target);} });},{threshold:.08,rootMargin:'0px 0px -6% 0px'});
+    var rv=document.querySelectorAll('[data-reveal]'); for(var i=0;i<rv.length;i++) io.observe(rv[i]);
+  } else { revealAll(); }
+}catch(e){ revealAll(); }
+/* absolute safety net: never leave content hidden */
+setTimeout(function(){ var hidden=document.querySelectorAll('[data-reveal]:not(.in)'); if(hidden.length>6) revealAll(); }, 2600);
+
+/* ---- counters ---- */
+function animateCount(el){
+  var end=parseFloat(el.getAttribute('data-count')), dec=parseInt(el.getAttribute('data-dec')||0,10), v=el.querySelector('.v');
+  if(!v){return;} var start=null, dur=1500;
+  function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/dur,1); var e=1-Math.pow(1-p,3); var val=end*e;
+    v.textContent = dec? val.toFixed(dec) : Math.round(val).toLocaleString(); if(p<1) requestAnimationFrame(step); }
+  requestAnimationFrame(step);
+}
+try{
+  var counters=document.querySelectorAll('[data-count]');
+  if('IntersectionObserver' in window && !reduce){
+    var co=new IntersectionObserver(function(ents){ents.forEach(function(x){ if(x.isIntersecting){ animateCount(x.target); co.unobserve(x.target);} });},{threshold:.4});
+    for(var c=0;c<counters.length;c++) co.observe(counters[c]);
+  } else { for(var c2=0;c2<counters.length;c2++){ var el=counters[c2]; var d=parseInt(el.getAttribute('data-dec')||0,10); var n=parseFloat(el.getAttribute('data-count')); el.querySelector('.v').textContent = d? n.toFixed(d): Math.round(n).toLocaleString(); } }
+}catch(e){}
+
+/* ---- nav scroll state + progress ---- */
+var nav=document.getElementById('nav'), sb=document.getElementById('scrollbar');
+function onScroll(){ var y=window.pageYOffset||document.documentElement.scrollTop;
+  if(nav){ if(y>20) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); }
+  if(sb){ var max=document.documentElement.scrollHeight-window.innerHeight; sb.style.transform='scaleX('+(max>0?y/max:0)+')'; } }
+window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+/* ---- smooth scroll helper ---- */
+window.go=function(sel){ var el=document.querySelector(sel); if(el){ el.scrollIntoView({behavior: reduce?'auto':'smooth', block:'start'}); } closeMenu(); };
+var anchors=document.querySelectorAll('.nav-links a, .foot a[href^="#"], .brand[href="#top"]');
+for(var a=0;a<anchors.length;a++){ anchors[a].addEventListener('click',function(e){ var h=this.getAttribute('href'); if(h&&h.charAt(0)==='#'){ e.preventDefault(); go(h);} }); }
+
+/* ---- gallery filter + lightbox ---- */
+var filters=document.getElementById('filters');
+if(filters) filters.addEventListener('click',function(e){ var b=e.target.closest('.filt'); if(!b)return;
+  var fs=document.querySelectorAll('.filt'); for(var i=0;i<fs.length;i++) fs[i].classList.remove('active'); b.classList.add('active');
+  var f=b.getAttribute('data-filter'), items=document.querySelectorAll('.gitem');
+  for(var j=0;j<items.length;j++){ var show=(f==='all'||items[j].getAttribute('data-cat')===f); items[j].classList.toggle('hide',!show); } });
+var lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg');
+document.addEventListener('click',function(e){ var g=e.target.closest('.gitem'); if(g&&lb){ lbImg.src=U(g.getAttribute('data-img'),1400); lbImg.alt=g.getAttribute('data-title')||''; lb.classList.add('open'); } });
+var lbc=document.getElementById('lbClose'); if(lbc) lbc.addEventListener('click',function(){lb.classList.remove('open');});
+if(lb) lb.addEventListener('click',function(e){ if(e.target===lb) lb.classList.remove('open'); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&lb) lb.classList.remove('open'); });
+
+/* ---- mobile menu ---- */
+var mmenu=document.getElementById('mmenu');
+var burger=document.getElementById('burger'); if(burger) burger.addEventListener('click',function(){mmenu.classList.add('open');});
+var mclose=document.getElementById('mclose'); if(mclose) mclose.addEventListener('click',closeMenu);
+function closeMenu(){ if(mmenu) mmenu.classList.remove('open'); }
+var mlinks=document.querySelectorAll('[data-mclose]'); for(var m=0;m<mlinks.length;m++){ mlinks[m].addEventListener('click',function(e){ var h=this.getAttribute('href'); if(h){ e.preventDefault(); go(h);} else closeMenu(); }); }
+
+/* ---- toast ---- */
+var tT; window.toast=function(msg){ var t=document.getElementById('toast'); if(!t)return; t.textContent=msg; t.style.opacity='1'; t.style.transform='translate(-50%,0)'; clearTimeout(tT); tT=setTimeout(function(){ t.style.opacity='0'; t.style.transform='translate(-50%,20px)'; },2500); };
+})();
+</script>
+</body>
+</html>
